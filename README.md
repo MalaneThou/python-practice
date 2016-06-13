@@ -10,7 +10,7 @@ To run this program, Python 2.7 or later must be installed.
 
 If you are unsure: Open the terminal, type "python", and press return. If python is installed the terminal should display the current version.
 
-If you do not have Python installed download it from: https://www.python.org/downloads/ and run the file.
+If you do not have Python installed, download it from: https://www.python.org/downloads/ and run the file.
 
 # RUN
 Open the terminal and go into the directory where the "entertainment_center.py" file is located.
