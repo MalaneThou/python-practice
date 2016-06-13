@@ -5,7 +5,7 @@
 
 **Program:** Udacity - Full Stack Web Developer Nanodegree
 
-# PYTHON INSTALLATION
+# Python Installation
 To run this program Python 2.7 or later must be installed.
 
 If you are unsure: Open the terminal, type "python", and press return. If python is installed the terminal should display the current version installed.
