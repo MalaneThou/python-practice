@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Malane's Movie Trailers!</title>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        #trailer .modal-dialog {
+            margin-top: 200px;
+            width: 640px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 100%;
+            height: 100%;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+        .movie-tile:hover {
+            color: #fff;
+            border-radius: 10px;
+            background-color: rgb(34, 34, 34);
+            box-shadow: 0px 8px 26.68px 2.32px rgba(0, 0, 0, 0.235);
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+        .round {
+            border-radius:10px;
+        }
+
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Malane's Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="KBiOF3y1W0Y" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/1/13/Drive2011Poster.jpg" width="220" height="342">
+    <h4>Drive</h4>
+    <small>An unnamed Hollywood stunt driver moonlights as a getaway driver. After he ...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="Uv554B7YHk4" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/2/24/Creed_poster.jpg" width="220" height="342">
+    <h4>Creed</h4>
+    <small>Adonis Johnson never knew his famous father, boxing champion Apollo Creed, ...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="dKrVegVI0Us" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/5/53/Captain_America_Civil_War_poster.jpg" width="220" height="342">
+    <h4>Captain America: Civial War</h4>
+    <small>Disagreement over international oversight of the Avengers fractures them in...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="oX9ZT3RbYE4" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/0/02/The_Amazing_Spider-Man_theatrical_poster.jpeg" width="220" height="342">
+    <h4>The Amazing Spider-Man</h4>
+    <small>Peter Parker, a teenager from New York who becomes Spider-Man after being b...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="EXeTwQWrcwY" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/8/8a/Dark_Knight.jpg" width="220" height="342">
+    <h4>The Dark Knight</h4>
+    <small>Batman has been able to keep a tight lid on crime in Gotham City, but the J...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="pK2zYHWDZKo" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/0/0c/X-Men_Days_of_Future_Past_poster.jpg" width="220" height="342">
+    <h4>X-Men: Days of Future Past</h4>
+    <small>Convinced that mutants pose a threat to humanity, Dr. Bolivar Trask develop...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="SUXWAEX2jlg" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg" width="220" height="342">
+    <h4>Fight Club</h4>
+    <small>An 'everyman' who is discontented with his white-collar job forms a 'fight ...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="vKQi3bBA1y8" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg" width="220" height="342">
+    <h4>The Matrix</h4>
+    <small>A dystopian future in which reality as perceived by most humans is actually...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="C0BMx-qxsP4" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/9/98/John_Wick_TeaserPoster.jpg" width="220" height="342">
+    <h4>John Wick</h4>
+    <small>John Wick, a retired hitman seeking vengeance for the theft of his vintage ...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="8hP9D6kZseM" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/7/7f/Inception_ver3.jpg" width="220" height="342">
+    <h4>Inception</h4>
+    <small>A professional thief who commits corporate espionage by infiltrating the su...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="MxW4LZCYfvs" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/e/e9/The_Nice_Guys_poster.png" width="220" height="342">
+    <h4>The Nice Guys</h4>
+    <small>Holland March is a down-on-his-luck private eye in 1977 Los Angeles. Jackso...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="5iaYLCiq5RM" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/7/76/Shutterislandposter.jpg" width="220" height="342">
+    <h4>Shutter Island</h4>
+    <small>The implausible escape of a brilliant murderess brings U.S. Marshal Teddy D...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="HcwTxRuq-uk" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/d/dc/World_War_Z_poster.jpg" width="220" height="342">
+    <h4>World War Z</h4>
+    <small>Gerry Lane, a former United Nations investigator who must travel the world ...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="T-6YhRZowgc" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/d/d6/Tropic_thunder_ver3.jpg" width="220" height="342">
+    <h4>Tropic Thunder</h4>
+    <small>When their frustrated director decides to drop them in the middle of a jung...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="lB95KLmpLR4" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/7/7a/Social_network_film_poster.jpg" width="220" height="342">
+    <h4>The Social Network</h4>
+    <small>Harvard undergrad and computer genius Mark Zuckerberg begins work on a new ...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="JAUoeqvedMo" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/1/1b/Avengers_Age_of_Ultron.jpg" width="220" height="342">
+    <h4>Avengers 2: Age of Ultron</h4>
+    <small>The Avengers fight Ultron, an artificial intelligence obsessed with causing...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="TNMpa5yBf5o" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/6/69/Toy_Story_3_poster.jpg" width="220" height="342">
+    <h4>Toy Story 3</h4>
+    <small>Toys Woody, Buzz Lightyear, and their friends dealing with an uncertain fut...</small>
+    <hr />
+</div>
+
+<div class="col-sm-6 col-md-4 col-lg-3 movie-tile text-center" data-trailer-youtube-id="PulHR2LfPVk" data-toggle="modal" data-target="#trailer">
+    <img class="round" src="https://upload.wikimedia.org/wikipedia/en/a/a0/Simpsons_final_poster.png" width="220" height="342">
+    <h4>The Simpsons Movie</h4>
+    <small>Homer Simpson, whose irresponsibility gets the better of him when he pollut...</small>
+    <hr />
+</div>
+
+    </div>
+  </body>
+</html>
