@@ -5,17 +5,15 @@
 
 **Program:** Udacity - Full Stack Web Developer Nanodegree
 
-# PYTHON INSTALLATION
-To run the movie trailer website:
+# Python
+Python 2.7 or later must be installed.
 
-Make sure your computer has Python 2.7 or later installed.
+If you are unsure: Open the terminal, type "python", and press return. If python is installed the terminal should display the current version.
 
-If you are unsure: Open the terminal, type "python", and press return. If python is installed the terminal should display the current version installed.
-
-If you do not have Python installed download it from: https://www.python.org/downloads/ and run the file.
+If you do not have Python installed, download it from: https://www.python.org/downloads/ and run the file.
 
 # RUN
-Open the terminal and go into the directory where the "entertainment_center.py" file is located.
+To run this program, open the terminal and go into the directory where the "entertainment_center.py" file is located.
 
 Type "python entertainment_center.py" and press return.
 
